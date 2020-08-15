@@ -1,0 +1,10 @@
+https://www.mercadopago.com.ar/developers/es/guides/qr-code/qr-unattended/qr-unattended-part-a/
+
+https://www.mercadopago.com.uy/developers
+
+https://www.youtube.com/watch?v=6Pjr1vsHxPg&list=PLCazXKuqZp3ghsG2vBWYa9KPr-3YVbM-z
+
+
+
+json
+https://stackoverflow.com/questions/9563748/how-to-create-json-array-using-vb-net
