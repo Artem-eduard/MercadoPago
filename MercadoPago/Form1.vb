@@ -35,14 +35,17 @@ Public Class Form1
     Private Sub B_Generar_Sucursal_Click(sender As Object, e As EventArgs) Handles B_Generar_Sucursal.Click
         Dim objectRequest = New Clase_Sucursal()
         objectRequest.name = "Prueba"
-        objectRequest.location = New Clase_Location()
-        objectRequest.location.street_number = 3039
-        objectRequest.location.street_name = "Caseros"
-        objectRequest.location.city_name = "Cochengo"
-        objectRequest.location.state_name = "Canelones"
-        objectRequest.location.latitude = -32.8897322
-        objectRequest.location.longitude = -68.8443275
-        objectRequest.location.reference = "3er Piso"
+        objectRequest.location = New Clase_Location(3039, "Caseros", "Cochengo", "Canelones", -32.8897322, -68.8443275, "3er Piso")
+        objectRequest.business_hours = New Business_Hours()
+        objectRequest.business_hours.monday.Add(New Time_Openclose(opentime:="08:00", closetime:="13:00"))
+        objectRequest.business_hours.monday.Add(New Time_Openclose("15:00", "18:00"))
+        objectRequest.business_hours.tuesday.Add(New Time_Openclose("08:00", "18:00"))
+        objectRequest.business_hours.wednesday.Add(New Time_Openclose("08:00", "18:00"))
+        objectRequest.business_hours.thursday.Add(New Time_Openclose("08:00", "18:00"))
+        objectRequest.business_hours.friday.Add(New Time_Openclose("08:00", "18:00"))
+        objectRequest.business_hours.saturday.Add(New Time_Openclose("08:00", "18:00"))
+        objectRequest.business_hours.sunday.Add(New Time_Openclose("08:00", "18:00"))
+
         Dim content = New StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(objectRequest))
 
         Dim client = New HttpClient()
